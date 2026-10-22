@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <title>ReelVerse — Movie Discovery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">John<span>flix</span></a>
+    <form id="searchForm" class="search-row">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search for movies"
+        autocomplete="off"
+        aria-label="Search movies"
+        required
+      >
+      <button class="submit" type="submit">Search</button>
+    </form>
+    <a href="https://johnbny.github.io/Portfolio-Site/" target="_blank">John</a>
+</header>
+
+  
+
+  <main class="main">
+    <div class="results-header">
+      <div>
+        <p id="showingFor">Showing for: Marvel</p>
+        <h2>Movie results</h2>
+        <p id="resultCount">Search for a movie to begin.</p>
+      </div>
+
+      <label class="sort-control">
+        Sort by
+        <select id="sortFilter" aria-label="Sort movie results">
+          <option value="az">A to Z</option>
+          <option value="za">Z to A</option>
+          <option value="newest">Newest-oldest</option>
+          <option value="oldest">Oldest-newest</option>
+        </select>
+      </label>
+    </div>
+
+    <p id="loading" class="message" hidden>Searching movies...</p>
+
+    <section
+      id="movieGrid"
+      class="movie-grid"
+      aria-label="Movie search results"
+      aria-live="polite"
+    ></section>
+
+    <p id="emptyState" class="message" hidden>
+      No movies found. Try another search.
+    </p>
+  </main>
+
+  <footer>
+    Johnflix by John
+</footer>
+</body>
+</html>
