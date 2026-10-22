@@ -422,3 +422,221 @@ footer {
     display: none;
   }
 }
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Desktop: 5 movie cards per row */
+.movie-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 1000px) {
+  .topbar {
+    gap: 16px;
+    padding: 12px 3%;
+  }
+
+  .topbar .search-row {
+    max-width: 500px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
+
+  .main {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 760px) {
+  .topbar {
+    min-height: 70px;
+    height: auto;
+    gap: 14px;
+    padding: 12px 4%;
+  }
+
+  .brand {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .topbar > a:last-child {
+    display: none;
+  }
+
+  .topbar .search-row {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    gap: 7px;
+  }
+
+  .search-row input {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 0 10px;
+  }
+
+  .search-row button {
+    height: 42px;
+    padding: 0 14px;
+    flex-shrink: 0;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+
+  .main {
+    padding: 26px 4% 45px;
+  }
+
+  .results-header {
+    gap: 16px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 5%;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .topbar .search-row {
+    flex-basis: 100%;
+    order: 2;
+  }
+
+  .search-row input {
+    flex: 1;
+    width: auto;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .search-row button {
+    height: 44px;
+    padding: 0 17px;
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 24px 5% 40px;
+  }
+
+  .results-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sort-control {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sort-control select {
+    flex: 1;
+    max-width: 190px;
+    padding: 9px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+
+  .movie-title {
+    margin-top: 7px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .movie-year {
+    font-size: 12px;
+  }
+
+  .poster {
+    border-radius: 5px;
+  }
+
+  footer {
+    padding: 20px 5%;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 340px) {
+  .topbar {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .search-row {
+    gap: 6px;
+  }
+
+  .search-row button {
+    padding: 0 10px;
+  }
+
+  .movie-grid {
+    gap: 18px 9px;
+  }
+
+  .movie-title {
+    font-size: 13px;
+  }
+
+  .sort-control {
+    gap: 8px;
+  }
+
+  .sort-control select {
+    max-width: 155px;
+    font-size: 11px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .movie-card {
+    animation: none;
+  }
+
+  .poster img:hover {
+    scale: 1;
+  }
+
+  .search-row button,
+  .poster img {
+    transition: none;
+  }
+}
